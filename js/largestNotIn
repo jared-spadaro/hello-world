@@ -1,0 +1,24 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let sorted = A.sort((a,b) => {
+        return a - b;
+    });
+    let ret = 0; 
+    let ndx = sorted.length-1;
+    let max = 0;
+    while (ret === 0) {
+        max = sorted[ndx]; //6
+        var temp = max-1; //5
+        //check max-- until we reach another element
+        while (ret === 0) {
+            temp = max-1;
+            if (temp in sorted === false) {
+                ret = temp;
+                console.log('set ret to ' + ret);
+            }
+            else temp--;
+        }
+        ndx--;
+    }
+    return ret;
+}

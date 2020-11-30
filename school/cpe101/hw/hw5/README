@@ -1,0 +1,4 @@
+I completed all required functionality for the assignment. However I was unable to resolve all issues with user 
+error, i.e. if a flag is missing arguments, error will occur. I tried solving this with a function called 
+"flag_checker", which I left in my commandline.c file and also included test cases for. However I ran into a bug 
+which I could not solve.

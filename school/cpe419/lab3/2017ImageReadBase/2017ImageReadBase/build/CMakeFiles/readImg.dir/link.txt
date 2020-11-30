@@ -1,0 +1,1 @@
+/bin/c++    -std=c++0x -Wall -pedantic    CMakeFiles/readImg.dir/src/main.cpp.o  -o readImg -rdynamic 

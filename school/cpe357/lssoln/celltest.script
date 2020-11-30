@@ -1,0 +1,19 @@
+./SafeRun -o400000 -t700 -T6000 -p100 ./LinearSim C3 S10 L34.5 R99.7 | sort > myoutput1.txt
+
+./SafeRun -o40000 -t700 -T6000 -p100 ./LinearSim C10 S10 L34.5 R99.7 | sort > myoutput2.txt
+
+./SafeRun -o40000 -t700 -T6000 -p100 ./LinearSim C20 S10 L2 R5 | sort > myoutput3.txt
+
+./SafeRun -o40000 -t700 -T6000 -p100 ./LinearSim C50 S20 L54.2 R12 | sort > myoutput4.txt
+
+./SafeRun -o40000 -t700 -T6000 -p1000 ./LinearSim C100 S10 L11 R0 | sort > myoutput5.txt
+
+./SafeRun -o40000 -t700 -T6000 -p1000 ./LinearSim C200 S50 L34 R23 | sort > myoutput6.txt
+
+./SafeRun -o40000 -t700 -T6000 -p100 ./LinearSim C2 S5 L23.2 R11.1 | sort > myoutput7.txt
+
+./SafeRun -o400000 -t700 -T6000 -p100 ./LinearSim C1 S3 L23.2 R78.5 | sort > mytoutput8.txt
+
+./SafeRun -o400000 -t700 -T6000 -p100 ./LinearSim C0 S4 L21.2 R21.2 | sort > myoutput9.txt
+
+./SafeRun -o400000 -t700 -T6000 -p100 ./LinearSim C5 S0 L0 R0 | sort > myoutput10.txt

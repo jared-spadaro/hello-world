@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+set arch=`arch`
+
+set qemu=/home/pn-cs453/QEMU/$arch/bin/qemu-system-i386 
+if ( -x $qemu ) then
+  exec $qemu $argv
+else
+  echo "Unable to find appropriate back end for $arch.  Bummer."
+endif

@@ -1,0 +1,17 @@
+newList
+addAtIndex 0 5.37
+printList 1
+checkSpace 1
+addAtIndex 0 -6.31
+printList 2
+checkSpace 2
+addAtIndex 2 9.73
+printList 3
+checkSpace 3
+addAtIndex 1 3.54
+printList 4
+checkSpace 4
+addAtIndex 3 8.82
+printList 5
+checkSpace 5
+done

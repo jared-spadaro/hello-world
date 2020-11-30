@@ -1,0 +1,6 @@
+newList
+checkSpace 0 
+addAtIndex 0 1.11
+printList 1
+checkSpace 1
+done

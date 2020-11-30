@@ -1,0 +1,45 @@
+#include "data.h"
+#include "vector_math.h"
+#include "collisions.h"
+#include "cast.h"
+
+int cast_ray (struct ray r,struct sphere spheres[],int num_spheres)
+{
+   int i;
+   int intersect = 0;
+   struct maybe_point mp;
+   for(i=0;i<num_spheres;i++)
+   {
+      mp = sphere_intersection_point(r,spheres[i]);
+      if(mp.isPoint == 1)
+      {
+         intersect=1;
+      }  
+   }
+   if(intersect == 0)
+   {
+      return 0;
+   }
+   else
+   {
+      return 1;
+   }
+}
+
+void cast_all_rays (double min_x,double max_x,double min_y,double 
+max_y,int width,int height,struct point eye,struct sphere spheres[],int 
+num_spheres)
+{
+   struct vector v;
+   struct ray r;
+   int i;
+   int j;
+   for(i=0;i<height;i++)
+   {
+      for(j=0;j<width;j++)
+      {
+         v = {min_x,max_y,0};
+         r = {{eye},{v}};
+
+   
+}

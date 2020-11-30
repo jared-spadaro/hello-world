@@ -1,0 +1,4 @@
+Jared Spadaro (jaspadar)
+
+Developed on Ubuntu, used root privelege to test
+The only return value I didn't check was fprintf, when already in an error state

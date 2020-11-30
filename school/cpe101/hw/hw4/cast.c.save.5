@@ -1,0 +1,75 @@
+#include "data.h"
+#include "vector_math.h"
+#include "collisions.h"
+#include "cast.h"
+#include <stdio.h>
+
+int cast_ray (struct ray r,struct sphere spheres[],int num_spheres)
+{
+   int intersect = 0;
+   struct point intersection_points[10000];
+   struct sphere hit_spheres[10000];
+   intersect = find_intersection_points(spheres,num_spheres,r,hit_spheres,intersection_points);
+   if(intersect == 0)
+   {
+      return 0;
+   }  
+   else
+   {
+      return 1;
+   }
+}
+
+int create_color (double x)
+{
+   return x * 255;
+}
+
+void cast_all_rays (double min_x,double max_x,double min_y,double 
+max_y,int width,int height,struct point eye,struct sphere spheres[],int 
+num_spheres)
+{
+   struct ray r;
+   struct vector v;
+   int intersect;
+   int i;
+   int j;
+   printf("P3\n");
+   printf("%d %d\n",width,height);
+   printf("255\n");
+   int white =create_color(0.0);
+   int black = create_color(1.0);
+   
+   for(i=max_y;i>min_y;i--)
+   {
+      for(j=min_x;j<max_x;j++)
+      {
+         v = difference_point(create_point(min_x+(i/width)),max_y-((max_y-min_y)/i),0),eye);
+         r = create_ray(eye,v);
+         intersect = cast_ray(r,spheres,num_spheres);
+         if (intersect!=0)
+         {
+            printf("%d %d %d\n", black, black, black);
+         }
+         else
+         {
+            printf("%d %d %d\n", white, white, white);
+         }
+      }
+   }
+}
+
+
+
+
+/*printf("P3\n");
+printf("%d %d\n',width,height);
+printf("255\n");
+
+in loop
+
+if(pixel==0)
+printf("0\n0\n0\n); -----> print white
+else
+printf("255\n255\n255\n); -----> print black
+*/

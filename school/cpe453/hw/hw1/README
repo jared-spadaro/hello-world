@@ -1,0 +1,12 @@
+Jared Spadaro (jaspadar)
+
+Assignment 1 - malloc library
+
+My makefile creates dynamic libraries (32 and 64 bit versions) as in
+the example makefile. It also creates static libary versions and contains
+a clean command to erase existing .o files and libraries.
+
+Realloc was not implemented in this library, aside from the simple cases
+where it is passed a null pointer or size of zero.
+
+

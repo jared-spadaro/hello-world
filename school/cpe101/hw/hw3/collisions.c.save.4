@@ -1,0 +1,62 @@
+#include "data.h"
+#include "vector_math.h"
+#include <math.h>
+
+struct maybe_point sphere_intersection_point(struct ray r, struct sphere s)
+{
+   double A;
+   double B;
+   double C;
+   double t1;
+   double t2;
+   double discriminant;
+   
+   struct maybe_point not_a_point = {{0},{0,0}};
+   struct maybe_point a_point1 = {{1},{r.p + (r.dir * t1)}}; //scale vector, translate vector
+   struct maybe_point a_point2 = {{1},{r.p + (r.dir * t2)}}; //scale vector, translate vector
+
+   A = r.dir * r.dir;
+   B = 2((r.p - s.center) * r.dir);
+   C = ((r.p -s.center) * (r.p - s.center)) - (s.radius * s.radius);
+
+   discriminant = (B*B) - (4*A*C);
+   
+   t1 = (-B + sqrt((B*B) - (4*A*C))) / (2*A);
+   t2 = (-B - sqrt((B*B) - (4*A*C))) / (2*A);
+
+   
+   
+
+//find discriminant. if negative return 0
+
+   if (discriminant < 0)
+   {
+     // return maybe_point with "0" flag
+   }
+
+   if (discriminant >=0)
+   {
+      if (t1 >= 0 && t2 >= 0)
+      {
+         if (t1 < t2)
+         {
+            //return point w/ t1
+         }
+         else if (t2 < t1)
+         {
+            //return point w/ t2
+         }
+      else if (t1 >= 0 && t2 <= 0)
+      {
+         //return point w/ t1
+      }
+      else if (t2 >= 0 && t1 <= 0)
+      {
+         //return point w/ t2
+      else
+      else if (t2 < t1
+   } 
+}
+
+
+

@@ -1,0 +1,10 @@
+archive: libmalloc.a libmalloc64.a
+
+libmalloc.a:  malloc32.o
+	ar r libmalloc.a malloc32.o
+
+libmalloc64.a:  malloc64.o
+	ar r libmalloc64.a malloc64.o
+
+clean:
+	rm -r lib lib64 *.o

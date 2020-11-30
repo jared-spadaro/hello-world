@@ -1,0 +1,12 @@
+Jared Spadaro (jaspadar)
+
+This was developed on a CSL Linux machine.
+
+I attempted to test the root privelege portion on my minix image
+but was unable to download the required libraries (crypt.h, 
+termios.h, etc). As such, these portions are untested.
+
+Included in the makefile is a chown and chmod call, to set the
+owner of the executable "mksuid" to root and set its uid to owner, 
+so that it can execute with root privelege. Of course, this means
+that this program must be built by a superuser to run properly.

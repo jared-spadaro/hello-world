@@ -1,0 +1,3 @@
+#!/bin/bash
+DEBUG_MALLOC=0:$DEBUG_MALLOC
+export DEBUG_MALLOC

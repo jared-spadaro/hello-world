@@ -1,0 +1,8 @@
+List: 3.45 4.56 5.67 
+checkSpace: Expected amount of memory allocated
+List: 3.45 5.67 
+checkSpace: Expected amount of memory allocated
+List: 3.45 
+checkSpace: Expected amount of memory allocated
+List: 
+checkSpace: Expected amount of memory allocated

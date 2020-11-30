@@ -1,0 +1,13 @@
+Jared Spadaro (jaspadar)
+9am Lab Section
+
+Program handles some situations but not others
+
+Flags:
+
+   FNAME_OK = 8
+   FNAME_ACK = 9
+   FNAME_ERR = 10
+   END_OF_FILE = 11
+   EOF_ACK = 12
+   CRC_ERROR = -1 

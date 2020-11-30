@@ -1,0 +1,132 @@
+#include "data.h"
+#include "vector_math.h"
+#include "collisions.h"
+#include "cast.h"
+#include <stdio.h>
+#include <math.h>
+
+double distance (struct point p1, struct point p2)
+{
+   return sqrt((p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y)+(p1.z-p2.z)*(p1.z-p2.z));
+}
+
+int nearest_eye (struct point const input[],struct point eye,int size)
+{
+   int i;
+   int index_nearest = 0;
+   for(i=0;i<size;i++)
+   {
+      if(distance(eye,input[index_nearest]) > distance(eye,input[i]))
+      {
+         index_nearest = i;
+      }
+   }
+   return index_nearest;
+}
+
+
+
+
+
+
+
+struct color cast_ray (struct ray r,struct sphere spheres[],int num_spheres,struct color ambient,struct light l)
+{
+   
+   struct color sphere_color;
+   int intersect;
+   int index_nearest;
+   struct sphere hit_spheres[10000];
+   struct point intersection_points[10000];
+   struct vector N;
+   struct point new_p;
+   struct vector L_dir;
+   double dot;   
+
+   intersect = find_intersection_points(spheres,num_spheres,r,hit_spheres,intersection_points);
+   index_nearest = nearest_eye(intersection_points,r.p,intersect);
+   
+   v = sphere_normal_at_point(hit_spheres[index_nearest],intersection_points[index_nearest]);
+   new_p = translate_point(intersection_points[index_nearest],N);
+   L_dir = normalize_vector(difference_point(l.p,new_p));
+   dot = dot_vector(N,L_dir);
+
+
+   if(dot<=0)
+   {
+   f.diffuse = 0;
+   }
+
+   if(intersect>0)
+   {
+      
+      sphere_color = hit_spheres[index_nearest].c;
+      sphere_color.r = sphere_color.r * ambient.r * hit_spheres[index_nearest].f.ambient;
+      sphere_color.g = sphere_color.g * ambient.g * hit_spheres[index_nearest].f.ambient;
+      sphere_color.b = sphere_color.b * ambient.b * hit_spheres[index_nearest].f.ambient;
+   }
+   else
+   {
+       sphere_color = create_color(1.0,1.0,1.0);
+   }
+   return sphere_color;
+}
+
+int color_scale (double x)
+{
+   if(x>1.0)
+   {
+      x=1.0;
+   }  
+   return x * 255;
+}
+
+void cast_all_rays (double min_x,double max_x,double min_y,double 
+max_y,int width,int height,struct point eye,struct sphere spheres[],int 
+num_spheres,struct color ambient,struct light l)
+{
+   struct ray r;
+   struct vector v;
+   struct color intersect;
+   
+   int i;
+   int j;
+   
+   printf("P3\n");
+   printf("%d %d\n",width,height);
+   printf("255\n");
+   
+   for(i=0;i<height;i++)
+   {
+      
+      for(j=0;j<width;j++)
+      {
+           
+         
+         v = difference_point(create_point(min_x+((double)j*(max_x-min_x)/(double) width),max_y-((double) i*(max_y-min_y)/(double) height),0),eye);
+         r = create_ray(eye,v);
+         intersect = cast_ray(r,spheres,num_spheres,ambient,l);
+         
+         
+         printf("%d\n",color_scale(intersect.r));
+         printf("%d\n",color_scale(intersect.g));
+         printf("%d\n",color_scale(intersect.b));
+         
+      }
+   }
+}
+
+
+
+
+/*printf("P3\n");
+printf("%d %d\n',width,height);
+printf("255\n");
+
+in loop
+
+if(pixel==0)
+printf("0\n0\n0\n); -----> print white
+else
+printf("255\n255\n255\n); -----> print black
+*/

@@ -1,0 +1,9 @@
+newList
+addAtIndex 0 1.11
+addAtIndex 1 2.22
+printList 2
+checkSpace 2
+addAtIndex 2 3.33
+printList 3
+checkSpace 3
+done

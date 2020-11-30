@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Foundry>
+<VM>
+<VMId type="string">52 73 67 6d 9b fb af 2b-ae 75 4f 8a 8b e7 d1 8c</VMId>
+<ClientMetaData>
+<clientMetaDataAttributes/>
+<HistoryEventList/></ClientMetaData>
+<vmxPathName type="string">Minix3.vmx</vmxPathName></VM></Foundry>

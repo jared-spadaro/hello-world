@@ -1,0 +1,21 @@
+# Disk DescriptorFile
+version=1
+encoding="UTF-8"
+CID=9e45f51f
+parentCID=ffffffff
+isNativeSnapshot="no"
+createType="twoGbMaxExtentSparse"
+
+# Extent description
+RW 4194304 SPARSE "Minix3-s001.vmdk"
+
+# The Disk Data Base 
+#DDB
+
+ddb.adapterType = "ide"
+ddb.geometry.cylinders = "4161"
+ddb.geometry.heads = "16"
+ddb.geometry.sectors = "63"
+ddb.longContentID = "149436ea24cbb4a36c66ea489e45f51f"
+ddb.uuid = "60 00 C2 9e d8 df df d2-f0 22 63 19 dc ad 01 3e"
+ddb.virtualHWVersion = "12"

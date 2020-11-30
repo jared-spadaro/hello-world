@@ -1,0 +1,8 @@
+Jared Spadaro (jaspadar)
+
+"lwp.h" is unchanged.
+
+The set_scheduler function does not work.
+I had a lot of trouble with my management of the thread list, 
+and all of the scheduling components of the library in general.
+However, my library does run the test programs without issue. 

@@ -1,0 +1,14 @@
+rm out_mycell.txt
+rm Sout_mycell.txt
+rm myout.txt
+rm Smyout.txt
+rm myout_mycell.txt
+rm Smyout_mycell.txt
+rm err.txt
+rm Serr.txt
+rm err_mycell.txt
+rm Serr_mycell.txt
+rm myerr.txt
+rm Smyerr.txt
+rm myerr_mycell.txt
+rm Smyerr_mycell.txt

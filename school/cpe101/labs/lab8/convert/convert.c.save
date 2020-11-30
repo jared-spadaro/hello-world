@@ -1,0 +1,21 @@
+#include "convert.h"
+#include <string.h>
+
+#include <stdio.h>
+
+
+
+double convert_double(char * input[],char check[],double 
+default_value,double ret_value)
+{
+      
+   int converted;
+   converted = sscanf(input,"%s",&check);
+   if(converted >= 1)
+   {
+      return ret_value;
+   }
+   return default_value;
+}
+
+
